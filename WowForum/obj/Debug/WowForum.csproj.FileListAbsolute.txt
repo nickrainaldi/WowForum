@@ -80,3 +80,5 @@ C:\Users\Nick Rainaldi\Documents\Projects\WowForum\WowForum\bin\Microsoft.Owin.S
 C:\Users\Nick Rainaldi\Documents\Projects\WowForum\WowForum\obj\Debug\WowForum.csprojResolveAssemblyReference.cache
 C:\Users\Nick Rainaldi\Documents\Projects\WowForum\WowForum\obj\Debug\WowForum.dll
 C:\Users\Nick Rainaldi\Documents\Projects\WowForum\WowForum\obj\Debug\WowForum.pdb
+C:\Users\Nick Rainaldi\Documents\Projects\WowForum\WowForum\bin\RestSharp.dll
+C:\Users\Nick Rainaldi\Documents\Projects\WowForum\WowForum\bin\RestSharp.xml
