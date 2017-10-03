@@ -1,0 +1,34 @@
+﻿@model WowForum.Models.CharacterInformationModel
+@{
+    ViewBag.Title = "Character Form";
+}
+@Styles.Render("~/Content/Main.css")
+
+<h2 class="text-center">CharacterForm</h2>
+
+<div class="container" id="CharacterFormCont">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please enter character information</h3>
+                </div>
+                <div class="panel-body">
+                        <fieldset>
+
+                            @using (Html.BeginForm("GetCharacter", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+                            {
+                                <div class="form-group">
+                                @Html.TextBoxFor(m => m.name, new { @id = "CharacterName", @name = "Character name", @type = "text", @placeholder = "Name", @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                @Html.TextBoxFor(m => m.realm, new { @id = "Realm", @name = "Realm", @type = "text", @placeholder = "Realm", @class = "form-control" })
+                                </div>
+                                <button class="btn btn-lg btn-success btn-block">Submit</button>
+                            }
+                        </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

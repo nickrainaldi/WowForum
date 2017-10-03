@@ -31,6 +31,7 @@ namespace WowForum.Models.APIReturnModels
         public string recodedRace { get; set; }
         public string recodedGender { get; set; }
         public string recodedFaction { get; set; }
+        public string recodedThumbnail { get; set; }
 
 
         public void GetCharacterRecode()
@@ -39,6 +40,7 @@ namespace WowForum.Models.APIReturnModels
             GetRaceRecode();
             GetGenderRecode();
             GetFactionRecode();
+            GetThumbnailRecode();
 
 
         }
@@ -75,6 +77,14 @@ namespace WowForum.Models.APIReturnModels
             LookupDict = LD.GetCharacterFaction();
 
             recodedFaction = LookupDict[faction];
+
+
+        }
+
+        public void GetThumbnailRecode()
+        {
+
+            recodedThumbnail = "https://render-us.worldofwarcraft.com/character/" + thumbnail;
 
 
         }

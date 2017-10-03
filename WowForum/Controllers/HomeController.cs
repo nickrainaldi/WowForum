@@ -12,11 +12,23 @@ namespace WowForum.Controllers
     {
         public ActionResult Index()
         {
-            CharacterInformationModel model = new CharacterInformationModel();
 
-            return View("Index", model);
+            return View("Index");
         }
 
+        [HttpGet]
+        public ActionResult RegisterType()
+        {
+            return View("RegisterType");
+        }
+
+
+        public ActionResult CharacterForm()
+        {
+            CharacterInformationModel model = new CharacterInformationModel();
+
+            return View("CharacterForm", model);
+        }
 
         public ActionResult GetCharacter(CharacterInformationModel characterInfo)
         {
@@ -31,25 +43,21 @@ namespace WowForum.Controllers
             Session["race"] = model.recodedRace;
             Session["gender"] = model.recodedGender;
             Session["class"] = model.recodedClass;
+            Session["thumbnail"] = model.recodedThumbnail;
 
 
             return View("CharacterDisplay", model);
 
         }
 
-        [HttpGet]
-        public ActionResult NewUser()
-        {
-            return View("NewUser");
-        }
 
-        [HttpPost]
-        //[Route("users/new")]
-        public ActionResult NewUser(RegisterViewModel model)
-        {
+        //[HttpPost]
+        ////[Route("users/new")]
+        //public ActionResult NewUser(RegisterViewModel model)
+        //{
 
 
-        }
+        //}
     }
 
 }

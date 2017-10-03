@@ -7,19 +7,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Enter character and realm.
+        <h2>One day, stuff will be here.</h2>
 
-            @using (Html.BeginForm("GetCharacter", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
-            {
-                @Html.TextBoxFor(m => m.name, new { @id = "Character Name", @name = "Character name", @type = "text", @placeholder = "Name" })
-
-                @Html.TextBoxFor(m => m.realm, new { @id = "Realm", @name = "Realm", @type = "text", @placeholder = "Realm" })
-
-                <button class="btn center-block">Submit</button>
-            }
-
-        </p>
 
     </div>
