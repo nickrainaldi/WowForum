@@ -2,24 +2,39 @@
 @{
     ViewBag.Title = "CharacterDisplay";
 }
+@Styles.Render("~/Content/CharDisplay.css")
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-<h2>CharacterDisplay</h2>
+<h2 class="text-center">Is this you?</h2>
 
-@Model.name
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 col-lg-offset-4">
+            <div class="card hovercard">
+                @if (Model.recodedFaction == "Horde")
+                {
+                    <div class="cardheaderhor">
+                    </div>
+                }
+                else
+                {
+                    <div class="cardheaderall">
+                    </div>
+                }
 
-@Model.realm
-
-@Model.recodedFaction
-
-@Model.recodedGender
-
-@Model.recodedRace
-
-@Model.recodedClass
-
-<img src="@Model.recodedThumbnail" />
-
-
-<a href="@Url.Action("NewUser", "Home")">
-    <button id="loginbutton" type="button" class="btn btn-primary">Sign Up</button>
-</a>
+                <div class="avatar">
+                    <img alt="" src="@Model.recodedThumbnail">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="">@Model.name</a>
+                    </div>
+                    <div class="desc">@Model.realm</div>
+                    <div class="desc">@Model.recodedRace</div>
+                    <div class="desc">@Model.recodedClass</div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
