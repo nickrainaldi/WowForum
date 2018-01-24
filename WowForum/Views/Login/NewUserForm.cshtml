@@ -1,0 +1,40 @@
+﻿@model WowForum.Models.NewUserModel
+@{
+    ViewBag.Title = "NewUser Form";
+}
+@Styles.Render("~/Content/Main.css")
+
+<h2 class="text-center">Register as a New User (No Character Information)</h2>
+
+<div class="container" id="CharacterFormCont">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please enter User Credentials</h3>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+
+                        @using (Html.BeginForm("GetUser", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
+                         {
+                            <div class="form-group">
+                                 @Html.TextBoxFor(m => m.Username, new { @id = "username", @name = "user name", @type = "text", @placeholder = "User Name", @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.Email, new { @id = "username", @name = "user name", @type = "text", @placeholder = "Email", @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.Password, new { @id = "password", @name = "password", @type = "text", @placeholder = "Password", @class = "form-control" })
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.ConfirmPassword, new { @id = "password", @name = "password", @type = "text", @placeholder = "Confirm Password", @class = "form-control" })
+                            </div>
+                            <button class="btn btn-lg btn-success btn-block">Submit</button>
+                         }
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

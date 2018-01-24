@@ -21,12 +21,6 @@ namespace WowForum.Controllers
 
             var response = client.Execute<T>(request);
 
-            if (response.ErrorException != null)
-            {
-                const string message = "Error retrieving response.  Check inner details for more info.";
-                var applicationException = new ApplicationException(message, response.ErrorException);
-                throw applicationException;
-            }
             return response.Data;
         }
 

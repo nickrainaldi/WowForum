@@ -17,17 +17,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Wow Based Site", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                @*<ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
+                </ul>*@
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Register", "RegisterType", "Home", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    <li>@Html.ActionLink("Log in", "LoginForm", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
                 </ul>
             </div>
         </div>
@@ -37,7 +37,7 @@
     </div>
     <hr />
     <footer>
-        <p class="text-center">&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <p class="text-center">&copy; @DateTime.Now.Year - Work in Progress Site</p>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")

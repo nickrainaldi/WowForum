@@ -5,18 +5,24 @@
 
 <h2 class="text-center">RegisterType</h2>
 
-<div class="jumbotron">
-    <div class="panel-title">
-        <p class="text-center">Would you like to bind your account to an active World of Warcraft Character?</p>
-        <p class="text-center">You can change this later.</p>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="jumbotron">
+            <div class="panel-title">
+                <p class="text-center">Would you like to bind your account to an active World of Warcraft Character?</p>
+                <p class="text-center">You can change this later.</p>
+            </div>
+
+            <div class="text-center">
+                <div class="btn-group">
+                    <a href="@Url.Action("CharacterForm", "Character")" class="btn btn-primary">Yes</>
+                    <a href="@Url.Action("NewUserForm", "Login")" class="btn btn-danger">No</a>
+                </div>
+            </div>
+         
+        </div>
+
+
+            </div>
+        </div>
     </div>
-    <div class="col-lg-offset-5">
-        <a href="@Url.Action("CharacterForm", "Home")"
-        <button type="button" class="btn btn-primary">Yes!</button>
-        </a>
-        <button type="button" class="btn btn-danger">No :(</button>
-    </div>
-
-
-</div>
-

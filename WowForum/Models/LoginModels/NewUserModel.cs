@@ -4,15 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace WowForum.Models.ViewModels
+namespace WowForum.Models
 {
-    public class RegisterUserModel
-    {
-
-        public class RegisterViewModel
+        public class NewUserModel
         {
             [Required]
-            public string Name { get; set; }
+            public string Username { get; set; }
 
             [Required]
             [EmailAddress(ErrorMessage = "Please enter a valid email")]
@@ -26,5 +23,4 @@ namespace WowForum.Models.ViewModels
             [Compare("Password")]
             public string ConfirmPassword { get; set; }
         }
-    }
 }
