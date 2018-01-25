@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WowForum.Models;
+using WowForum.SQLDAL;
 
 namespace WowForum.Controllers
 {
@@ -16,25 +17,16 @@ namespace WowForum.Controllers
             return View("LoginForm", model);
         }
 
-        //public ActionResult GetUser(LoginViewModel userInfo)
-        //{
-        //    APIController API = new APIController();
-        //    CharacterInfoAPIModel model = new CharacterInfoAPIModel();
-        //    model = API.GetCharacter(characterInfo);
-        //    model.GetCharacterRecode();
+        public ActionResult GetUser(NewUserModel userInfo)
+        {
 
-        //    Session["name"] = model.name;
-        //    Session["realm"] = model.realm;
-        //    Session["faction"] = model.recodedFaction;
-        //    Session["race"] = model.recodedRace;
-        //    Session["gender"] = model.recodedGender;
-        //    Session["class"] = model.recodedClass;
-        //    Session["thumbnail"] = model.recodedThumbnail;
+            UserDAL userDAL = new UserDAL();
+            userDAL.CreateUser(userInfo);
 
 
-        //    return View("CharacterDisplay", model);
+            return View("TempPage");
 
-        //}
+        }
 
         public ActionResult NewUserForm()
         {
