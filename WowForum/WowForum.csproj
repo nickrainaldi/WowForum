@@ -212,6 +212,7 @@
     <Compile Include="Models\LoginModels\LoginViewModel.cs" />
     <Compile Include="Models\LoginModels\NewUserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLDAL\Interfaces\IUserDAL.cs" />
     <Compile Include="SQLDAL\UserDAL.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -219,6 +220,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CharDisplay.css" />
+    <Content Include="Content\Validation.css" />
     <Content Include="Content\Main.css" />
     <Content Include="Content\Pictures\Alliance.png" />
     <Content Include="Content\Pictures\Horde.jpg" />

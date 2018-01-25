@@ -17,21 +17,25 @@
                     <fieldset>
 
                         @using (Html.BeginForm("GetUser", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
-                         {
+                        {
                             <div class="form-group">
-                                 @Html.TextBoxFor(m => m.Username, new { @id = "username", @name = "user name", @type = "text", @placeholder = "User Name", @class = "form-control" })
+                                @Html.TextBoxFor(m => m.Username, new { @id = "username", @name = "user name", @type = "text", @placeholder = "User Name", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Username, "", new { @class = "validation-error" })
                             </div>
                             <div class="form-group">
                                 @Html.TextBoxFor(m => m.Email, new { @id = "username", @name = "user name", @type = "text", @placeholder = "Email", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "validation-error" })
                             </div>
                             <div class="form-group">
                                 @Html.TextBoxFor(m => m.Password, new { @id = "password", @name = "password", @type = "text", @placeholder = "Password", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "validation-error" })
                             </div>
                             <div class="form-group">
                                 @Html.TextBoxFor(m => m.ConfirmPassword, new { @id = "password", @name = "password", @type = "text", @placeholder = "Confirm Password", @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "validation-error" })
                             </div>
                             <button class="btn btn-lg btn-success btn-block">Submit</button>
-                         }
+                        }
                     </fieldset>
                 </div>
             </div>

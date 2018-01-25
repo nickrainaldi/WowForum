@@ -18,12 +18,14 @@
 
                         @using (Html.BeginForm("GetUser", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
                         {
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.username, new { @id = "username", @name = "user name", @type = "text", @placeholder = "User Name", @class = "form-control" })
-                            </div>
-                            <div class="form-group">
-                                @Html.TextBoxFor(m => m.password, new { @id = "password", @name = "password", @type = "text", @placeholder = "Password", @class = "form-control" })
-                            </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.username, new { @id = "username", @name = "user name", @type = "text", @placeholder = "User Name", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.username, "", new { @class = "validation-error" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(m => m.password, new { @id = "password", @name = "password", @type = "text", @placeholder = "Password", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.password, "", new { @class = "validation-error" })
+                        </div>
                             <button class="btn btn-lg btn-success btn-block">Submit</button>
                         }
                     </fieldset>

@@ -20,7 +20,7 @@ namespace WowForum.Controllers
         public ActionResult GetUser(NewUserModel userInfo)
         {
 
-            UserDAL userDAL = new UserDAL();
+            IUserDAL userDAL = new UserDAL();
             userDAL.CreateUser(userInfo);
 
 

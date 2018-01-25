@@ -1,0 +1,29 @@
+﻿#error {
+    color : red;
+    margin : 0px;
+    font-size : 150%;
+
+}
+
+.validation-error{
+    color: red;
+}
+
+.field-validation-error {
+    color: #ff0000;
+}
+
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.valid {
+    border: 1px solid #ADD8E6;
+    background-color: #BFEFFF;
+}
