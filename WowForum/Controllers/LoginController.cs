@@ -17,10 +17,18 @@ namespace WowForum.Controllers
             return View("LoginForm", model);
         }
 
-        public ActionResult GetUser(NewUserModel userInfo)
+        public ActionResult CreateUser(NewUserModel userInfo)
         {
 
             IUserDAL userDAL = new UserDAL();
+            var currentUser = userDAL.GetUser(userInfo.Username, userInfo.Password);
+
+            if(currentUser != null)
+            {
+                return View("TempPage");
+            }
+
+
             userDAL.CreateUser(userInfo);
 
 

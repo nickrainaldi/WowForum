@@ -16,7 +16,7 @@
                 <div class="panel-body">
                     <fieldset>
 
-                        @using (Html.BeginForm("GetUser", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
+                        @using (Html.BeginForm("CreateUser", "Login", FormMethod.Post, new { @class = "form-horizontal" }))
                         {
                             <div class="form-group">
                                 @Html.TextBoxFor(m => m.Username, new { @id = "username", @name = "user name", @type = "text", @placeholder = "User Name", @class = "form-control" })
