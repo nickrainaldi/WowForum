@@ -6,6 +6,7 @@ using System.Web;
 using WowForum.Models;
 using System.Web.Configuration;
 using WowForum.Models.LoginModels;
+using WowForum.Models.APIReturnModels;
 
 namespace WowForum.SQLDAL
 {
@@ -14,7 +15,7 @@ namespace WowForum.SQLDAL
         string databaseConnectionString = WebConfigurationManager.ConnectionStrings["wowsiteConnection"].ConnectionString;
 
 
-        public void CreateUser(NewUserModel newUser)
+        public void CreateUserNoChar(NewUserModel newUser)
         {
             try
             {
@@ -28,6 +29,35 @@ namespace WowForum.SQLDAL
                     cmd.Parameters.AddWithValue("@username", newUser.Username);
                     cmd.Parameters.AddWithValue("@password", newUser.Password);
                     cmd.Parameters.AddWithValue("@email", newUser.Email);
+
+
+                    var result = cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public void CreateUserWithChar(NewUserModel newUser, CharacterInfoAPIModel characterInfo)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(databaseConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("StoredProcname", conn);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    conn.Open();
+
+                    cmd.Parameters.AddWithValue("@username", newUser.Username);
+                    cmd.Parameters.AddWithValue("@password", newUser.Password);
+                    cmd.Parameters.AddWithValue("@email", newUser.Email);
+                    cmd.Parameters.AddWithValue("@email", characterInfo.gender);
+                    cmd.Parameters.AddWithValue("@email", characterInfo.faction);
+                    cmd.Parameters.AddWithValue("@email", characterInfo.Class);
+                    cmd.Parameters.AddWithValue("@email", characterInfo.race);
 
 
                     var result = cmd.ExecuteNonQuery();

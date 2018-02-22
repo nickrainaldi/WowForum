@@ -29,14 +29,7 @@ namespace WowForum.Controllers
             }
             model.GetCharacterRecode();
 
-            Session["name"] = model.name;
-            Session["realm"] = model.realm;
-            Session["faction"] = model.recodedFaction;
-            Session["race"] = model.recodedRace;
-            Session["gender"] = model.recodedGender;
-            Session["class"] = model.recodedClass;
-            Session["thumbnail"] = model.recodedThumbnail;
-
+            Session["WoWCharacterInfo"] = model;
 
             return View("CharacterDisplay", model);
 
