@@ -21,7 +21,7 @@ namespace WowForum.SQLDAL
             {
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("StoredProcname", conn);
+                    SqlCommand cmd = new SqlCommand("CreateNoChar", conn);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     conn.Open();
@@ -46,7 +46,7 @@ namespace WowForum.SQLDAL
             {
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("StoredProcname", conn);
+                    SqlCommand cmd = new SqlCommand("CreateWithChar", conn);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     conn.Open();
@@ -77,7 +77,7 @@ namespace WowForum.SQLDAL
             {
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("StoredProcname", conn);
+                    SqlCommand cmd = new SqlCommand("CreateNoChar", conn);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     conn.Open();
