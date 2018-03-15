@@ -9,7 +9,7 @@ using WowForum.SQLDAL;
 
 namespace WowForum.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
         public ActionResult LoginForm()
         {
@@ -39,9 +39,9 @@ namespace WowForum.Controllers
                 return View("TempPage");
             }
 
-            if(Session["WoWCharacterInfo"] != null)
+            if(SharedSession["WoWCharacterInfo"] != null)
             {
-                CharacterInfoAPIModel characterInfo = (CharacterInfoAPIModel)Session["CharacterModelReturn"];
+                CharacterInfoAPIModel characterInfo = (CharacterInfoAPIModel)SharedSession["WowCharacterInfo"];
                 userDAL.CreateUserWithChar(userInfo, characterInfo);
             }
             else

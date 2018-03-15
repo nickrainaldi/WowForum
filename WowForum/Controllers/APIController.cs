@@ -11,7 +11,7 @@ using WowForum.Models;
 
 namespace WowForum.Controllers
 {
-    public class APIController : Controller
+    public class APIController : BaseController
     {
         public T Execute<T>(RestRequest request) where T : new()
         {

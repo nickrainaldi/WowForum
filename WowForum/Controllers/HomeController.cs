@@ -8,7 +8,7 @@ using WowForum.Models.APIReturnModels;
 
 namespace WowForum.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {

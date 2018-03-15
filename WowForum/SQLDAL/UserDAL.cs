@@ -54,10 +54,10 @@ namespace WowForum.SQLDAL
                     cmd.Parameters.AddWithValue("@username", newUser.Username);
                     cmd.Parameters.AddWithValue("@password", newUser.Password);
                     cmd.Parameters.AddWithValue("@email", newUser.Email);
-                    cmd.Parameters.AddWithValue("@email", characterInfo.gender);
-                    cmd.Parameters.AddWithValue("@email", characterInfo.faction);
-                    cmd.Parameters.AddWithValue("@email", characterInfo.Class);
-                    cmd.Parameters.AddWithValue("@email", characterInfo.race);
+                    cmd.Parameters.AddWithValue("@faction", characterInfo.recodedFaction);
+                    cmd.Parameters.AddWithValue("@gender", characterInfo.recodedGender);
+                    cmd.Parameters.AddWithValue("@race", characterInfo.recodedRace);
+                    cmd.Parameters.AddWithValue("@class", characterInfo.recodedClass);
 
 
                     var result = cmd.ExecuteNonQuery();
@@ -77,7 +77,7 @@ namespace WowForum.SQLDAL
             {
                 using (SqlConnection conn = new SqlConnection(databaseConnectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("CreateNoChar", conn);
+                    SqlCommand cmd = new SqlCommand("GetUser", conn);
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     conn.Open();

@@ -8,7 +8,7 @@ using WowForum.Models.APIReturnModels;
 
 namespace WowForum.Controllers
 {
-    public class CharacterController : Controller
+    public class CharacterController : BaseController
     {
         public ActionResult CharacterForm()
         {
@@ -29,7 +29,7 @@ namespace WowForum.Controllers
             }
             model.GetCharacterRecode();
 
-            Session["WoWCharacterInfo"] = model;
+            SharedSession["WoWCharacterInfo"] = model;
 
             return View("CharacterDisplay", model);
 
